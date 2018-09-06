@@ -164,7 +164,7 @@ class Schema
 
     public function reset()
     {
-        [$this->names, $this->engines] = $this->mapper->getClient()->evaluate("
+        list($this->names, $this->engines) = $this->mapper->getClient()->evaluate('
             local spaces = {}
             local engines = {}
             local i, s
@@ -173,7 +173,7 @@ class Schema
                 engines[s[3]] = s[4]
             end
             return spaces, engines
-        ")->getData();
+        ')->getData();
     }
 
     public function getMeta()

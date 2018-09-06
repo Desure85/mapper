@@ -2,7 +2,6 @@
 
 namespace Tarantool\Mapper\Plugin;
 
-use Closure;
 use Exception;
 use phpDocumentor\Reflection\DocBlockFactory;
 use phpDocumentor\Reflection\Types\ContextFactory;
@@ -217,7 +216,7 @@ class Annotation extends UserClasses
             if (!$sourceSpace) {
                 throw new Exception("Invalid compute source $type");
             }
-            $compute = Closure::fromCallable([$this->entityMapping[$spaceName], 'compute']);
+            $compute = \Tarantool\Mapper\Closure::fromCallable([$this->entityMapping[$spaceName], 'compute']);
             $this->mapper->getPlugin(Compute::class)->register($sourceSpace, $spaceName, $compute);
         }
 
