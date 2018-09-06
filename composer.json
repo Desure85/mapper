@@ -1,5 +1,5 @@
 {
-    "name": "tarantool/mapper",
+    "name": "egorov/mapper",
     "description": "PHP Object Mapper for Tarantool.",
     "keywords": ["tarantool", "client", "pure", "nosql", "mapper"],
     "type": "library",
